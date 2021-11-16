@@ -15,7 +15,7 @@ export default function ContactMe() {
 			.sendForm(
 				'gmail',
 				'contact_me',
-				form.current,
+				// form.current,
 				'user_RSDIhyAH5TXx32SY8QcwO'
 			)
 			.then(

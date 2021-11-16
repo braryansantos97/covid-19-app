@@ -1,6 +1,6 @@
 import React from 'react';
 import Welcome from '../pages/Welcome';
-import Contact from '../pages/Welcome';
+import Contact from '../pages/Contact';
 import About from '../pages/About';
 
 // import { Route, Switch } from "react-router-dom";

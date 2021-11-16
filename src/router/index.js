@@ -7,23 +7,23 @@ import axios from 'axios';
 
 const AppRouter = () => {
 
-   componentDidMount(){
-    const options = {
-      method: 'GET',
-      url: 'https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total',
-      params: {country: 'Canada'},
-      headers: {
-        'x-rapidapi-key': '',
-        'x-rapidapi-host': 'covid-19-coronavirus-statistics.p.rapidapi.com'
-      }
-    };
-
-    axios.request(options).then(function (response) {
-    	console.log(response.data);
-    }).catch(function (error) {
-    	console.error(error);
-    });
-  };
+  //  componentDidMount(){
+  //   const options = {
+  //     method: 'GET',
+  //     url: 'https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total',
+  //     params: {country: 'Canada'},
+  //     headers: {
+  //       'x-rapidapi-key': '',
+  //       'x-rapidapi-host': 'covid-19-coronavirus-statistics.p.rapidapi.com'
+  //     }
+  //   };
+  //
+  //   axios.request(options).then(function (response) {
+  //   	console.log(response.data);
+  //   }).catch(function (error) {
+  //   	console.error(error);
+  //   });
+  // };
 
 
 	return (

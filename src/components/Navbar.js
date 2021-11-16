@@ -5,7 +5,7 @@ const NavBar = props => {
 	return (
 		<div>
 			<nav
-				className="navbar is-info"
+				className="nav navbar-dark bg-dark"
 				role="navigation"
 				aria-label="main navigation"
 			>
