@@ -4,50 +4,28 @@ import { Link } from 'react-router-dom';
 const NavBar = props => {
 	return (
 		<div>
-			<nav
-				className="nav navbar-dark bg-dark"
-				role="navigation"
-				aria-label="main navigation"
-			>
-				<div className="navbar-brand">
-
-					<a
-						role="button"
-						className="navbar-burger"
-						aria-label="menu"
-						aria-expanded="false"
-						data-target="navbarBasicExample"
-						href="/"
-					>
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-					</a>
-				</div>
-
-				<div id="navbarBasicExample" className="navbar-menu">
-					<div className="navbar-start">
-						{props.routes.map(({ key, path }) => (
-							<Link className="navbar-item" key={key} to={path}>
-								{key}
-							</Link>
-						))}
-					</div>
-
-					<div className="navbar-end">
-						<div className="navbar-item">
-							{/*<div className="buttons">
-								<Link className="button is-primary" to="/">
-									<strong>Sign up</strong>
-								</Link>
-								<Link className="button is-light" to="/">
-									Log in
-								</Link>
-							</div>*/}
-						</div>
-					</div>
-				</div>
-			</nav>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Covid-19</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="/home">Home</a>
+				</li>
+				{props.routes.map(({ key, path }) => (
+					<li className="nav-item">
+						<Link className="nav-link active" key={key} to={path}>
+							{key}
+						</Link>
+					</li>
+				))}
+        </ul>
+      </div>
+    </div>
+  </nav>
 		</div>
 	);
 };
