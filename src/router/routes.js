@@ -5,21 +5,20 @@ import About from '../pages/About';
 
 const routes = [
   {
-    path: "/",
+    Component: Welcome,
     key: "welcome",
-    Component: Welcome
+    path: "/"
   },
   {
-    path: '/contact',
-    key: 'contact',
     Component: Contact,
+    key: 'contact',
+    path: '/contact'
   },
 	{
-    path: '/about',
-    key: 'about',
     Component: About,
+    key: 'about',
+    path: '/about'
 	},
-,
 ];
 
 export default routes;

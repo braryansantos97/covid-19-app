@@ -3,12 +3,8 @@ import ReactDOM from 'react-dom';
 import AppRouter from './router/index';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <AppRouter />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const root = document.getElementById('root');
+ReactDOM.render(<AppRouter />, root);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
