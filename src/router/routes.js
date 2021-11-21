@@ -6,8 +6,8 @@ import About from '../pages/About';
 const routes = [
   {
     Component: Welcome,
-    key: "welcome",
-    path: "/"
+    key: 'welcome',
+    path: "/welcome"
   },
   {
     Component: Contact,
