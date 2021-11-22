@@ -11,6 +11,7 @@ export default function About(props) {
 							className="button is-info"
 							href="https://www.linkedin.com/in/brayan-santos/"
 							target="_blank"
+							rel=""
 						>
 							<span className="icon is-info">
 								<i className="fab fa-linkedin"></i>
@@ -19,6 +20,7 @@ export default function About(props) {
 						<a
 							href="https://twitter.com/santos_c_b"
 							target="_blank"
+							rel="noreferrer"
 							className="button is-info"
 						>
 							<span className="icon is-info">

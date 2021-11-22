@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './router/index';
+import { ChakraProvider } from "@chakra-ui/react";
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppRouter />
+    <ChakraProvider>
+      <AppRouter />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

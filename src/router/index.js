@@ -8,21 +8,21 @@ import axios from 'axios';
 
 const AppRouter = () => {
 	const [contry, setContry] = useState("");
-	const [allContries, setAllContries] = useState([]);
+	const [total, setTotal] = useState("");
 	const [currentContry, setCurrentContry] = useState({});
 
 	 useEffect(() => {
 			(async () => {
 			try {
-				const response = await fetch("https://covid-19-data.p.rapidapi.com/country/all?format=json", {
+				const response = await fetch("https://covid-19-data.p.rapidapi.com/totals", {
 					"method": "GET",
 					"headers": {
 						"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-						"x-rapidapi-key": ""
+						"x-rapidapi-key": "f038bc4bafmsh34635fa6d4ed154p1808c2jsn07972b149609"
 					}
 				});
-				const data = await response;
-				setAllContries(...data);
+				const data = await response.json();
+				setTotal(data);
 			} catch (e) {
 				console.error(e);
 			}
@@ -73,7 +73,7 @@ const AppRouter = () => {
 				))}
 				<Route
 					path={'/'}
-					render={(routerProps) => <Home {...routerProps} allContries={allContries}/>}
+					render={(routerProps) => <Home {...routerProps} total={total} />}
 				></Route>
         <Route
           path={'/:id'}
