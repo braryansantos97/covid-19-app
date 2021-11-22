@@ -9,6 +9,7 @@ import axios from 'axios';
 const AppRouter = () => {
 	const [contry, setContry] = useState("");
 	const [total, setTotal] = useState("");
+	const [vaccination, setVaccination]= useState([])
 	const [currentContry, setCurrentContry] = useState({});
 
 	 useEffect(() => {
@@ -27,6 +28,24 @@ const AppRouter = () => {
 				console.error(e);
 			}
 		} ) ();
+	}, []);
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const response = await fetch("https://covid-19-world-vaccination-data.p.rapidapi.com/?iso=USA", {
+					"method": "GET",
+					"headers": {
+						"x-rapidapi-host": "covid-19-world-vaccination-data.p.rapidapi.com",
+						"x-rapidapi-key": "f038bc4bafmsh34635fa6d4ed154p1808c2jsn07972b149609"
+					}
+				})
+				const data = await response.json();
+				setVaccination(data);
+			} catch (e) {
+				console.error(e);
+			}
+		}) ();
 	}, []);
 
 // 	const getTodos = async () => {
@@ -73,7 +92,7 @@ const AppRouter = () => {
 				))}
 				<Route
 					path={'/'}
-					render={(routerProps) => <Home {...routerProps} total={total} />}
+					render={(routerProps) => <Home {...routerProps} total={total} vaccination={vaccination} />}
 				></Route>
         <Route
           path={'/:id'}

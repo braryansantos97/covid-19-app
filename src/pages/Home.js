@@ -18,15 +18,12 @@ export default function Home(props) {
                 </Text>
 				<Box d="flex">
 					<Text>Confirmed: </Text>
-					<Text>{` ${props.total[0].confirmed}`}</Text>
 				</Box>
 				<Box d="flex">
 					<Text>Critical: </Text>
-					<Text>{` ${props.total[0].critical}`}</Text>
 				</Box>
 				<Box d="flex">
 					<Text>Deaths: </Text>
-					<Text>{` ${props.total[0].deaths}`}</Text>
 				</Box>
             </Box>
 
