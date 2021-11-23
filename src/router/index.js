@@ -5,6 +5,7 @@ import Show from '../pages/Show';
 import { BrowserRouter as Router, Route, Link, Routes, Switch } from 'react-router-dom';
 import routes from './routes';
 import axios from 'axios';
+import '../index.css';
 
 const AppRouter = () => {
 	const [contry, setContry] = useState("");
@@ -80,6 +81,7 @@ const AppRouter = () => {
 
 	return (
 		<Router>
+	  <div className="App">
       <Navbar routes={routes} />
 			<Switch>
 				{routes.map(({ Component, key, path }) => (
@@ -92,13 +94,14 @@ const AppRouter = () => {
 				))}
 				<Route
 					path={'/'}
-					render={(routerProps) => <Home {...routerProps} total={total} vaccination={vaccination} />}
+					render={(routerProps) => <Home {...routerProps} total={total} vaccination={vaccination}/>}
 				></Route>
         <Route
           path={'/:id'}
           render={routerProps => <Show {...routerProps} />}
         ></Route>
 			</Switch>
+		</div>
 		</Router>
 	);
 };
